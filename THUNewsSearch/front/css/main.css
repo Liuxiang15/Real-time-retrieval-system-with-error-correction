@@ -1,0 +1,85 @@
+html {
+    text-align:justify;
+    text-justify:inter-ideograph;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* header {
+    background: #f2f2f2;
+    padding: 5px 0;
+} */
+
+section {
+    height: calc(100% - 140px);
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#logo{
+    position: relative;
+    left: 45%;
+    background-image: url("logo.jpg");
+    background-size: 100%;
+    width: 110px;
+    height: 110px;
+}
+
+#inputAndSug {
+    position: relative;
+    left: 20%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    width: 60%;
+}
+
+#kw{
+    height: 40px;
+}
+
+#searchButton{
+    height: 40px;
+}
+
+#showSug{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+#correctInfo{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.list-group-item{
+    width: 87.5%;
+}
+
+.text-item{
+    padding-bottom: 2%;
+}
+
+.newsTitle{
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.newsTitle:link{
+    color: blue;
+}
+
+.newsTitle:hover{
+    color: blue;
+}
+
+.newsTitle:active{
+    color: red;
+}
+
+.newsTitle:visited{
+    color: purple;
+}

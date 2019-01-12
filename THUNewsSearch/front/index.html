@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TsinghuaNews Search GUI</title>
+
+    <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <!-- <header>
+        <div class="container">
+            <h1>清华新闻搜索助手</h1>
+        </div>
+    </header> -->
+
+    <section id="app">
+        <div id="logo"></div>
+        <div id="inputAndSug">
+            <div class="input-group">
+                <input type="text" class="form-control" name="wd" id="kw" maxlength="100" autocomplete="off" placeholder="请输入关键词" @input="handleQuery" @keyup.enter="beginRecognition">
+                <span class="input-group-btn">
+                    <button id="searchButton" class="btn btn-primary btn-block" type="button" @click="beginRecognition">搜索一下</button>
+                </span>
+            </div><!-- /input-group -->
+            <ul id="showSug" class="list-group">
+                <li class="list-group-item" v-for="(item,index) in wordsList" :key='index' v-html='item' @click="autoSearch(item)"></li>
+            </ul>
+        </div>
+        <div id="numAndTime" v-if="resultLen > 0">为您找到相关结果{{resultLen}}个(耗时{{searchTime}}秒)</div>
+        <div id="correctInfo" v-if="correctedValue != ''">您想搜索的关键词可能是：{{correctedValue}}</div>
+
+        <div id="content">
+            <ul id="text-list">
+                <li class="text-item" v-for="(item, index) in newsList">
+                    <div class="newsTitle" v-html="brightenkeywords(item.title)" @click="getNewsUrl(item)"></div>
+                    <span class="glyphicon glyphicon-time" aria-hidden="true">{{item.date}}</span>
+                    <div class="newsContent" v-html="brightenkeywords(item.content)"></div>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="eel.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
